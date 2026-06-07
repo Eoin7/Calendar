@@ -1,0 +1,104 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 80%;
+    height: 69vh;
+    margin: 4rem;
+    border: 10px solid black;
+    padding: 0.1rem;
+    display: flex;
+    flex-direction: column;
+
+    background-color:  #f4f1ec;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 4rem 0 0 0;
+        font-size:  0.6rem;
+        padding: 10px;
+    }
+}
+
+@media (min-height: 747px) {
+    .container {
+        margin-top: 4rem;
+        height: 600px;
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 30px);
+    padding: 3rem;
+
+}
+
+.Month {
+    grid-area: 1 / 1/  4 / 4;
+    font-family: Futura, sans-serif;
+
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.5rem;
+    transform: scaleY(2);
+}
+
+.names {
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.name {
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    border: 1px solid  rgb(48, 108, 128);
+
+}
+
+.days {
+    flex-grow: 1;
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: rgb(48, 108, 128);
+
+    padding: 1px;
+
+}
+
+.day {
+    border: none;
+    background-color: #f4f1ec;
+    transition: background-color 0.15s;
+
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.5em;
+    font-family: "Futura", sans-serif;
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+
+}
+
+.day:hover{
+    background-color: rgb(216, 207, 143);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
