@@ -15,9 +15,12 @@ for (let day = 1; day <= 30; day++) {
 
 
 // select the todays date
-const today = new Date().getDay(); 
+const today = new Date().getDate(); 
 const highlight = document.querySelector(".days").children[today-1];
 highlight.style.backgroundColor = "orange";
+
+const dbirth = document.querySelector(".days").children[24];
+dbirth.style.backgroundColor = "pink";
 
 
 
@@ -29,9 +32,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 const namesContainer = document.querySelector(".names");
-const days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+const daysWeek = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
-days.forEach(name => {
+daysWeek.forEach(name => {
     const nameDiv = document.createElement("div");
 
     nameDiv.classList.add("name");
@@ -39,3 +42,48 @@ days.forEach(name => {
 
     namesContainer.appendChild(nameDiv);
 })
+
+
+// notebox
+const days = document.querySelectorAll(".day");
+
+const noteBox = document.getElementById("noteBox");
+const noteTitle = document.getElementById("noteTitle");
+const noteText = document.getElementById("noteText");
+const saveNote = document.getElementById("saveNote");
+const closeNote = document.getElementById("closeNote");
+
+let selectedDay = null;
+let selectedDayBox = null;
+noteTitle.textContent = `Todays Date: ${new Date().getDate()} of June`;
+
+days.forEach(day => {
+    day.addEventListener("click", () => {
+        selectedDay = day.textContent.trim();
+        selectedDayBox = day;
+
+        noteTitle.textContent = `Note for ${selectedDay}`;
+        noteText.value = localStorage.getItem(`note-${selectedDay}`) || "";
+
+        noteBox.style.display = "block";
+    });
+});
+
+saveNote.addEventListener("click", () => {
+    localStorage.setItem(`note-${selectedDay}`, noteText.value);
+
+    if (noteText.value.trim() !== "") {
+        selectedDayBox.classList.add("has-note");
+    } else {
+        selectedDayBox.classList.remove("has-note");
+        localStorage.removeItem(`note-${selectedDay}`);
+    }
+
+    noteBox.style.display = "none";
+});
+
+closeNote.addEventListener("click", () => {
+    noteBox.style.display = "none";
+});
+
+
