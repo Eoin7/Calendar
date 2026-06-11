@@ -13,6 +13,12 @@ for (let day = 1; day <= 30; day++) {
 // const day7 = document.querySelector(".days").children[6];
 // // day7.style.backgroundColor = "#2144ab";
 
+const today = new Date().getDay(); 
+const highlight = document.querySelector(".days").children[today];
+highlight.style.backgroundColor = "orange";
+
+
+
 
 for (let i = 0; i < 5; i++) {
     const emptyDiv = document.createElement("div");
