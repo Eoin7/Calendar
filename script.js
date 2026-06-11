@@ -13,8 +13,10 @@ for (let day = 1; day <= 30; day++) {
 // const day7 = document.querySelector(".days").children[6];
 // // day7.style.backgroundColor = "#2144ab";
 
+
+// select the todays date
 const today = new Date().getDay(); 
-const highlight = document.querySelector(".days").children[today];
+const highlight = document.querySelector(".days").children[today-1];
 highlight.style.backgroundColor = "orange";
 
 
