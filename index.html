@@ -12,15 +12,41 @@
     <div class="container">
         <div class="header">
             <h2 class="Month">JUNE</h2>
-            <svg width="100" height="100" viewbox="0 0 100 100">
-                <circle cx="50" cy="50" r="30" fill="red"/>
 
-                <circle cx="40" cy="40" r="10" fill="white"/>
-                <circle cx="40" cy="40" r="5" fill="black"/>
+            <svg width="0" height="0" style="display:none;">
+                <defs>
+                    <symbol id="sunflower" viewBox="0 0 100 100">
 
-                <circle cx="62" cy="40" r="10" fill="white"/>
-                <circle cx="62" cy="40" r="5" fill="black"/>
+                        <circle class="flower-centre" cx="50" cy="50" r="19" fill="brown"/>
+
+                        <g class="petals" fill="gold" stroke="orange" stroke-width="1">
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(30 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(60 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(90 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(120 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(150 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(180 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(210 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(240 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(270 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(300 50 50)"/>
+                            <ellipse cx="50" cy="17.5" rx="7" ry="17.5" transform="rotate(330 50 50)"/>
+                        </g>
+
+                        <circle class="flower-centre" cx="50" cy="50" r="14" fill="black"/>
+
+                    </symbol> 
+                </defs>
             </svg>
+
+            <svg width="100" height="100" viewbox="0  0 160 100">
+
+                <use href="#sunflower" transform="translate(40 -20) scale(0.9)"></use>
+                <use href="#sunflower" transform="translate(-20 -10) scale(0.8)"></use>
+                <use href="#sunflower" x="0" y="10"></use>
+            </svg>
+
         </div>
 
         <div class="names"></div>
@@ -28,16 +54,18 @@
         <div class="days">
             <!-- grid goes here -->
         </div>
+    </div>
 
-        <div id="noteBox">
+
+    <div id="overlay">
+    </div>
+    <div id="noteBox">
             <h3 id="noteTitle"></h3>
             <textarea id="noteText" placeholder="Write a note.."></textarea>
             <br>
             <button id="saveNote">Save</button>
             <button id="closeNote">Close</button>
         </div>
-
-    </div>
 
     <script src="script.js"></script>
     
