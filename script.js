@@ -110,6 +110,9 @@ days.forEach(day => {
             top = rect.top;
         }
 
+        left=screenWidth / 4;
+        top=screenHeight / 2;
+
         noteBox.style.left = `${left}px`;
         noteBox.style.top = `${top}px`;
     });
