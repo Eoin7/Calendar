@@ -108,7 +108,12 @@ body {
     padding: 1px;
     padding-top: 1px;
 
+
+    touch-action: pan-y;
+    transition: transform 0.25s ease;
+    will-change: transform;
 }
+
 
 .day {
     border: none;
@@ -156,7 +161,7 @@ body {
     position: fixed;
     inset: 0;
 
-    z-index: 9998;
+    z-index: 999;
 }
 
 #noteBox {
@@ -173,7 +178,7 @@ body {
 
     height: 25%;
 
-    z-index: 9999;
+    z-index: 1000;
     padding-top: 10px;
 }
 
